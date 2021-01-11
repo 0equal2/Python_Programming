@@ -1,0 +1,12 @@
+자주쓰는 라이브러리 정리
+
+
+==큐 사용 
+from collections import deque
+
+queue=deque()
+queue.append(*)
+*=queue.popleft()
+
+
+
