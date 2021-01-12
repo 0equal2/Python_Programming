@@ -9,4 +9,14 @@ queue.append(*)
 *=queue.popleft()
 
 
+==리스트 정렬 
+arr=[100,50,300]
+arr.sort(reverse=True)
+print(arr)
 
+->[300,100,50]
+
+
+===소수점 출력 format
+print(format(result,".1f"))    #소수점 첫째자리까지
+print(format(result,".3f"))    #소수점 셋째자리까지
