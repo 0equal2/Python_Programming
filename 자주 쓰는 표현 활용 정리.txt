@@ -17,6 +17,30 @@ print(arr)
 ->[300,100,50]
 
 
+
+==리스트 역순 정렬
+arr=[14, 2, 26]
+방법1)  arr.sort(reverse=True)
+방법2)  arr=sorted(arr, reverse=True)
+
+
+
+
 ===소수점 출력 format
 print(format(result,".1f"))    #소수점 첫째자리까지
 print(format(result,".3f"))    #소수점 셋째자리까지
+
+
+
+
+===딕셔너리 정렬 dictionary sort
+<items 정렬>
+1) arr=sorted(arr.items())
+2) arr=sorted(arr.items(), key=lambda t: t[0])
+3) arr=sorted(arr.items(), key=lambda t: t[1])
+
+<keys 정렬>
+1) keysort=sorted(arr.keys())
+
+<values 정렬>
+1) valuesort=sorted(arr.values())
