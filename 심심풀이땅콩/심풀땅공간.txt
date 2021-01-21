@@ -1,8 +1,0 @@
-Hello!
-This is 0equal2's Python programming. 
-
-[공간 설명]
-그냥 아무생각없이 코딩하고싶을때 풀었던 심심풀이 땅콩입니다.
-
-
-
