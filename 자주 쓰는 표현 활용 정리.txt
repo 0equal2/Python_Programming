@@ -44,3 +44,20 @@ print(format(result,".3f"))    #소수점 셋째자리까지
 
 <values 정렬>
 1) valuesort=sorted(arr.values())
+
+
+
+===입력 시간 단축===
+input() 대신에 sys.stdin.readline()을 사용
+
+- import sys를 해주어야 한다. 
+
+
+
+
+===문자열 뒤집기===
+a='234'
+>>>''.join(reversed(a))
+>>>a[::-1]
+
+
