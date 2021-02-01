@@ -3,6 +3,7 @@
 ### 자물쇠와 열쇠 
 
 
+
 def check(board,lock,n,m):
     #print(board)
     
