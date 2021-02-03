@@ -5,7 +5,7 @@
 from collections import deque
 
 
-def dfs(x,y,board,check):
+def bfs(x,y,board,check):
     queue=deque()
     queue.append([x,y])
     check[x][y]=1
@@ -60,7 +60,7 @@ count=0
 for i in range(7):
     for j in range(7):
         if check[i][j]==0:
-            if dfs(i,j,board,check):
+            if bfs(i,j,board,check):
                 count+=1
 
 print(count)

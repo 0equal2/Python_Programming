@@ -5,7 +5,7 @@
 from collections import deque
 
 
-def on_dfs(x,y,check,board):
+def on_bfs(x,y,check,board):
     queue=deque()
     queue.append([x,y])
 
@@ -24,7 +24,7 @@ def on_dfs(x,y,check,board):
 
 
 
-def off_dfs(x,y,check,board):
+def off_bfs(x,y,check,board):
     queue=deque()
     queue.append([x,y])
 
@@ -66,7 +66,7 @@ on_count=0
 for i in range(m):
     for j in range(n):
         if board[i][j]==0 and on_check[i][j]==0:
-            on_dfs(i,j,on_check,board)
+            on_bfs(i,j,on_check,board)
             on_count+=1
 
 
@@ -78,7 +78,7 @@ off_count=0
 for i in range(m):
     for j in range(n):
         if board[i][j]==1 and off_check[i][j]==0:
-            off_dfs(i,j,off_check,board)
+            off_bfs(i,j,off_check,board)
             off_count+=1
             
 print(on_count,off_count)
