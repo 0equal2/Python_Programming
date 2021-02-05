@@ -26,7 +26,7 @@ def solution(stones, k):
     right=max(stones)+1 #가능하지 않은 최소 인원 (= 가능한 최대 인원 +1)
     
     #이분 탐색
-    while left<right:
+    while left<=right:
         
         mid=(left+right)//2
         
@@ -34,7 +34,7 @@ def solution(stones, k):
             left=mid+1
             
         else:
-            right=mid
+            right=mid-1
             
             
     answer=left-1 #마지막에 가능했던 인원
