@@ -22,10 +22,9 @@ def bfs(x,y,b,c):
             if 0<=nx and nx<n and 0<=ny and ny<m:
                 if b[nx][ny]==0 and c[nx][ny]==0:
                     c[nx][ny]=1
-                    #print("**",nx,ny)
                     count+=1
                     queue.append([nx,ny])
-    #print("----",count)
+    
     return count
 
 
@@ -33,19 +32,20 @@ def bfs(x,y,b,c):
 n,m = map(int,stdin.readline().split())
 
 #2. 지도 정보
-board=[]
-safe=-3
+board=[] #지도 정보 맵
 for i in range(n):
     data=list(map(int,stdin.readline().split()))
     board.append(data)
-    safe+=data.count(0)
+    
 
-#3. 벽을 세울 수 있는 공간
+#3. 벽을 세울 수 있는 공간 (0인 자리를 구하면서 안전 구역 수 카운트)
 wall=[]
+safe=-3  #안전 구역 개수=0의 개수 (나중에 벽을 3개 세울것이기 때문에 -3)
 for i in range(n):
     for j in range(m):
         if board[i][j]==0:
             wall.append([i,j])
+            safe+=1
 
 #4. 벽을 세울 수 있는 경우의 수
 wall=list(combinations(wall,3))
@@ -64,10 +64,9 @@ dy=[1,-1,0,0]
 for x,y,z in wall:
     
     #5-2. 새로운 벽 설치
-    new_board=board
-    new_board[x[0]][x[1]]=1
-    new_board[y[0]][y[1]]=1
-    new_board[z[0]][z[1]]=1
+    board[x[0]][x[1]]=1
+    board[y[0]][y[1]]=1
+    board[z[0]][z[1]]=1
 
     
     #5-3. check
@@ -81,17 +80,17 @@ for x,y,z in wall:
     for i in range(n):
         for j in range(m):
             
-            if new_board[i][j]==2 and check[i][j]==0:
-                count-=bfs(i,j,new_board,check)
-                #print(i,j,count)
+            if board[i][j]==2 and check[i][j]==0:
+                count-=bfs(i,j,board,check)
+                
 
     #5-5. 안전지대 개수 세기
     result.append(count)
 
-
-    new_board[x[0]][x[1]]=0
-    new_board[y[0]][y[1]]=0
-    new_board[z[0]][z[1]]=0
+    #5-6. 벽 세웠던 곳을 다시 0으로 되돌려놓음 
+    board[x[0]][x[1]]=0
+    board[y[0]][y[1]]=0
+    board[z[0]][z[1]]=0
     
 
 
