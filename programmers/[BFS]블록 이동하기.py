@@ -6,10 +6,11 @@
 from collections import deque
 
 def checkmove(i,nx0,ny0,nx1,ny1,board,d):
-    # 바퀴가 보드를 벗어나지 않고 
+    # 바퀴가 보드를 벗어나는 경우
     if 0>nx0 or 0>ny0 or 0>nx1 or 0>ny1 or n<=nx0 or n<=ny0 or n<=nx1 or n<=ny1:
         return False
-    
+
+    # 바퀴 하나라도 1에 있을 경우
     if board[nx0][ny0]==1 or board[nx1][ny1]==1:
         return False
     
