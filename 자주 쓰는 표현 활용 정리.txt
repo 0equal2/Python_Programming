@@ -79,3 +79,19 @@ b=a.copy()
 https://kyome.tistory.com/111
 
 프로그래머스->길 찾기 게임 참고!! 
+
+
+
+===반올림 위치===
+소수점 n번까지 표현(반올림)
+round(실수,n)
+
+===올림, 내림, 버림===
+import math
+math.ceil(n) 올림
+math.floor(n) 내림
+math.trunc(n) 버림
+** 내림과 버림의 차이 (음수에서 발생)
+ex) -12.8 내림 > -13
+ex) -12.8 버림 > -12
+
